@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Empresa</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+	<body>
+        <div class="w-[100vw] h-[100vh] bg-gray-300 flex flex-col justify-center items-center">
+            <div class="w-[22vw] p-4 mb-4 text-sm rounded-lg bg-gray-800 text-green-500 transition-all duration-75  opacity-0" role="alert" id='alert' >
+                <span id='alertText' class="font-medium"></span> 
+            </div>
+            <form method='POST' id='form' class='w-[22vw]' enctype="multipart/form-data">
+                <div class='flex flex-col text-black mt-2'>
+                    <label for="nombre">Nombre de la mascota</label>
+                    <input type="text" class='text-white p-2 bg-gray-800 rounded-lg' name="nombre" id="nombre" required>
+                </div>
+                <div class='flex flex-col text-black mt-2'>
+                    <label for="raza">Raza</label>
+                    <input type="text" class='text-white p-2 bg-gray-800 rounded-lg' name="raza" id="raza" required>
+                </div>
+                <div class='flex flex-col text-black mt-2'>
+                    <label for="imagen">Imagen</label>
+                    <input type="file" class='text-white p-2 bg-gray-800 rounded-lg' name="imagen" id="imagen" accept="image/*" required>
+                </div>
+                <button type="submit" id="botonEnviar" class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"> Añadir Mascota </button>
+                <button type="submit" id="verLista" class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"> Ver Mascotas </button>
+            </form>
+        </div>
+        <script src='./script.js'></script>
+	</body>
+</html>

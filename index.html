@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .chatbot-container {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 300px;
+            height: 580px;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+        .chatbot-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .chatbot-iframe {
+            width: 100%;
+            height: calc(100% - 40px);
+            border: none;
+        }
+        .btn-chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+        .btn-chatbot:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-blue-400">
+        <ul id="menu" class="menu">
+            <li><a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="index.html">Inicio</a></li>
+            <li><a class="text-white bg-blue-700 hover:bg-blue-800 cursor-not-allowed focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Empresa</a></li>
+            <li><a class="text-white bg-blue-700 hover:bg-blue-800 cursor-not-allowed focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Contacto</a></li>
+            <li class="login"><a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="login.php">Login</a></li>
+            <li class="register"><a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="register.php">Register</a></li>
+        </ul>
+    </nav>
+    <header id="cabeza">
+        <center><img class="logo" src="PERRITO.jpg" alt="Logo de la empresa" width="300"></center>
+        <center><h1 class="titulo"><i>HAZ UN ESPACIO EN TU CORAZON, ADOPTA UN AMIGO FIEL #Adoptaunamigo</i></h1></center>
+    </header>
+    <section id="texto">
+        <center><h2 class="mb-4 text-3xl font-extrabold text-gray-400 dark:text-white md:text-5xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-gray-900">MAX</h2>
+            <img class="logo" src="MAX.jpg" alt="FOTO DE MAX" width="300">
+        <p><i>MAX, un perro fiel que cumple 10 años desde su adopcion y gano el cariño de nuestra comunidad</i></p>
+        <h2 class="mb-4 text-3xl font-extrabold text-gray-400 dark:text-white md:text-5xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-gray-900">LUNA</h2>
+            <img class="logo" src="FAMILIA1.jpg" alt="FOTO DE LUNA" width="300">
+        <p>Luna, una guerrera que proteje a su familia en cada paseo</p>
+        <h2 class="mb-4 text-3xl font-extrabold text-gray-400 dark:text-white md:text-5xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-gray-600 from-gray-900">CHARLIE</h2>
+            <img class="logo" src="FAMILIA2.jpg" alt="FOTO DE CHARLIE" width="300">
+        <p>Charlie, un hijo mas y un hermano que gano el corazon de toda la familia</p></center>
+        <p>...</p></center>
+    </section>
+    <footer>
+        <p>Adopta hoy y transforma dos vidas: la suya y la tuya © 2024 </p>
+    </footer>
+
+    <!-- Botón flotante del chatbot -->
+    <a href="#" class="btn-chatbot">
+        <img src="chatbot.png" alt="Chatbot" width="50">
+    </a>
+
+    <!-- Contenedor del chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            Chatbot
+            <button onclick="toggleChatbot()" style="float: right; background: none; border: none; color: white;">&times;</button>
+        </div>
+        <iframe src="bot.php" class="chatbot-iframe"></iframe>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.querySelector('.btn-chatbot').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleChatbot();
+        });
+    </script>
+</body>
+</html>
